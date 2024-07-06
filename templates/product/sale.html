@@ -1,0 +1,23 @@
+{% extends '../layouts/base.html' %} 
+{% block title %} OnlyTshirts| Productos Ofertas {% endblock %} 
+{% block content %}
+<h1 class="text-center">Listados Productos Ofertas</h1>
+<div class="container-fluid">
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem">
+        <img src="{{ product.image_url }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">
+            {{ product.price }}
+          </p>
+          <a href="#" class="btn btn-primary">{{ product.stock }}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
